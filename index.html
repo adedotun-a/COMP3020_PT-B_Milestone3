@@ -50,6 +50,41 @@
         </ul>
       </div>
     </nav>
-    <div class="main"><h1>My Health Overview</h1></div>
+    <div class="main">
+      <h1>My Health Overview</h1>
+      <div class="row row-cols-2">
+        <div class="col-md-6 col-sm-12">BMI</div>
+        <div class="col-md-6 col-sm-12">
+          <label for="weight">Weight</label>
+          <input
+            id="weight"
+            name="weight"
+            type="number"
+            step="0.1"
+            placeholder="lbs"
+          />
+        </div>
+        <div class="col-md-6">Heart Rate</div>
+        <div class="col-md-6">Calories</div>
+        <div class="col-md-6">Steps</div>
+        <div class="col-md-6">
+          <label for="exercise">Exercise</label>
+          <select id="exercise" name="exercise">
+            <option value="">activity</option>
+            <option>Weights</option>
+            <option>Running</option>
+            <option>Cardio</option>
+            <option>Yoga</option>
+          </select>
+
+          <input
+            id="exercisedetail"
+            name="exercisedetail"
+            type="text"
+            placeholder="minutes"
+          />
+        </div>
+      </div>
+    </div>
   </body>
 </html>
