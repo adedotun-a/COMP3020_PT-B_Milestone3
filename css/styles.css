@@ -48,3 +48,12 @@ body {
   margin-left: var(--sidebar-width); /* Same as the width of the sidebar */
   padding: 30px 20px;
 }
+
+
+.layui-fluid{
+  position: absolute;
+  top: 80px;
+  right: 800px;
+  width: 200px;
+  height: 100px;
+}
