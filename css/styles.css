@@ -1,7 +1,3 @@
-:root {
-  --sidebar-width: 200px;
-}
-
 body {
   font-size: 14px;
   color: #4c5258;
@@ -13,11 +9,13 @@ body {
 
 /* The sidebar menu */
 .sidenav {
-  height: 100%;
-  width: var(--sidebar-width); /* Set the width of the sidebar */
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 200px; /* Set the width of the sidebar */
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black */
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
   text-align: center;
@@ -32,7 +30,7 @@ body {
   display: block;
 }
 
-/* Active/current link  */
+/* Active/current link */
 .sidenav a.active {
   background-color: #04aa6d;
   color: white;
@@ -45,15 +43,51 @@ body {
 
 /* Style page content */
 .main {
-  margin-left: var(--sidebar-width); /* Same as the width of the sidebar */
-  padding: 30px 20px;
+  margin-left: 200px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
 }
 
-
-.layui-fluid{
+/* On smaller screens, where height is less than 700px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 700px) {
+  .sidenav {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidenav a {
+    float: left;
+  }
+  div.main {
+    margin-left: 0;
+  }
+}
+#content {
+  position: relative;
+}
+#content img {
   position: absolute;
-  top: 80px;
-  right: 800px;
-  width: 200px;
-  height: 100px;
+  top: 0px;
+  right: 0px;
+}
+#myProgress {
+  width: 100%;
+  background-color: grey;
+}
+
+#myBar {
+  width: 1%;
+  height: 30px;
+  background-color: green;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+    text-align: center;
+    float: none;
+  }
 }
