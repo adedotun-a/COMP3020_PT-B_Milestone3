@@ -68,8 +68,8 @@
         <div class="col-lg-4 col-md-6 dashboard-column">
           <div class="card">
             <div class="card-title"><h3>BMI</h3><i class="fas fa-weight fa-3x icons"></i></div>
-            <div class="card-body"><h1>23.9</h2></div>
-              <span class="label label-success mx-auto">Normal</span>
+            <div class="card-body" id="bmiHere"><h1>23.9</h2></div>
+              <span class="label label-success mx-auto" id = "bmiSpan">Normal</span>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 dashboard-column">
@@ -96,22 +96,122 @@
         <div class="col-lg-4 col-md-6 dashboard-column">
           <div class="card">
             <div class="card-title"><h3>Sleep</h3><i class="fas fa-bed fa-3x icons"></i></div>
-            <div class="card-body"><h1>4 hrs</h2></div>
-              <span class="label label-warning mx-auto">Low</span>
+            <div class="card-body" id = "sleephrs"><h1>4 hrs</h2></div>
+              <span class="label label-warning mx-auto" id = "sleepSpan">Low</span>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 dashboard-column">
           <div class="card">
             <div class="card-title"><h3>Cycling</h3><i class="fas fa-biking fa-3x icons"></i></div>
-            <div class="card-body"><h1>2 hrs</h2></div>
-              <span class="label label-success mx-auto">Normal</span>
+            <div class="card-body" id = "cyclehrs"><h1>2 hrs</h2></div>
+              <span class="label label-success mx-auto" id = "cycleSpan">Normal</span>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 dashboard-column">
           <div class="card">
             <div class="card-title"><h3>Lifting</h3><i class="fas fa-dumbbell fa-3x icons"></i></div>
-            <div class="card-body"><h1>1 hrs</h2></div>
-              <span class="label label-success mx-auto">Normal</span>
+            <div class="card-body" id = "lifthrs"><h1>1 hrs</h2></div>
+              <span class="label label-success mx-auto" id = "liftSpan">Normal</span>
+          </div>
+        </div>
+        <div class="col-lg-8 col-md-6 dashboard-column">
+          <div class="card">
+            <div class="card-title"><h3>Update Information!</h3></div>
+            <div class="card-body">
+              <form class="row g-3">
+                  <div class="col-md-4">
+                    <label for="sleep" class="form-label"> Sleep</label>
+                    <input type="text" class="form-control" style="text-align:center; " id="SleepValue" placeholder="{hours}">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="cycling" class="form-label">Cycling</label>
+                    <input type="text" class="form-control" style="text-align:center; " id="Cycling" placeholder="{hours}">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="lifting" class="form-label">Lifting</label>
+                    <input type="text" class="form-control" id="lifting" style="text-align:center; " placeholder="{hours}">
+                  </div>
+                  <div class="col-md-12">
+                    <label for="BMI" class="form-label">BMI</label>
+                    <div class="row">
+
+                      <div class="col-md-6" style="padding-right: 0px;"><input type="text" aria-label="height" class="form-control" style="padding: 0px; text-align:center;" id = "bmiHeight" placeholder="{Height in cm}"></div>
+                      <div class="col-md-6" style="padding-left:  0px"><input type="text" aria-label="weight" class="form-control"style="padding: 0px; text-align:center; " id = "bmiWeight" placeholder="{Weight in kg} " ></div>
+                    </div>
+
+                  </div>
+                  <div class="col-12">
+                    <button type="button" class="btn btn-primary" onclick="UpdateFunc();">Update</button>
+                  </div>
+              </form>
+            </div>
+            <script>
+
+              function UpdateFunc(){
+                var sleep1 = document.getElementById("SleepValue").value;
+                var cycling1 = document.getElementById("Cycling").value;
+                var lift1 = document.getElementById("lifting").value;
+                var height1 = document.getElementById("bmiHeight").value;
+                var weight1 = document.getElementById("bmiWeight").value;
+                if(sleep1!=""){
+                document.getElementById("sleephrs").innerHTML = "<h1>"+sleep1+" hrs </h2>"
+                if(parseInt(sleep1,10)>5&&parseInt(sleep1,10)<10){
+                    appearence1 = document.getElementById("sleepSpan");
+                    appearence1.className = "label label-success mx-auto";
+                    appearence1.innerHTML = "Normal";
+                }else if (parseInt(sleep1,10)>9) {
+                  appearence1 = document.getElementById("sleepSpan");
+                  appearence1.className = "label label-warning mx-auto";
+                    appearence1.innerHTML = "High";
+                }else {
+                  appearence1 = document.getElementById("sleepSpan");
+                  appearence1.className = "label label-warning mx-auto";
+                    appearence1.innerHTML = "Low";
+                }
+                }
+                if (cycling1!="") {
+                  document.getElementById("cyclehrs").innerHTML = "<h1>"+cycling1+" hrs </h2>"
+                  if(parseInt(cycling1,10)>5){
+                    appearence2 = document.getElementById("cycleSpan");
+                    appearence2.className = "label label-warning mx-auto";
+                    appearence2.innerHTML = "High";
+                  }else {
+                    appearence2 = document.getElementById("cycleSpan");
+                    appearence2.className = "label label-success mx-auto";
+                    appearence2.innerHTML = "Normal";
+                  }
+                }
+                if (lift1!="") {
+                  document.getElementById("lifthrs").innerHTML = "<h1>"+lift1+" hrs </h2>"
+                  if(parseInt(lift1,10)>2){
+                    appearence3 = document.getElementById("liftSpan");
+                    appearence3.className = "label label-warning mx-auto";
+                    appearence3.innerHTML = "High";
+                  }else {
+                    appearence3 = document.getElementById("liftSpan");
+                    appearence3.className = "label label-success mx-auto";
+                    appearence3.innerHTML = "Normal";
+                  }
+                }
+                if(height1!=""&&weight1!=""){
+                  bmi1 = parseInt(height1,10)/parseInt(weight1,10);
+                  document.getElementById("bmiHere").innerHTML = "<h1>"+bmi1+"</h2>"
+                  if(bmi1 >24){
+                    var appearence =  document.getElementById('bmiSpan');
+                    appearence.className = "label label-warning mx-auto";
+                    appearence.innerHTML = "High"
+                  }else if ( bmi1<18.5) {
+                    var appearence =  document.getElementById('bmiSpan');
+                    appearence.className = "label label-warning mx-auto";
+                    appearence.innerHTML = "Low"
+                  }else {
+                    appearence = document.getElementById("bmiSpan");
+                    appearence.className = "label label-success mx-auto";
+                    appearence.innerHTML = "Normal";
+                  }
+                }
+              }
+            </script>
           </div>
         </div>
       </div>
