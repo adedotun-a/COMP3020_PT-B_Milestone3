@@ -116,9 +116,9 @@
               <span class="label label-success mx-auto" id = "liftSpan">Normal</span>
           </div>
         </div>
-        <div class="col-lg-8 col-md-6 dashboard-column">
-          <div class="card">
-            <div class="card-title"><h3>Update Information!</h3></div>
+        <div class="col-lg-8 col-md-12 dashboard-column">
+          <div class="card colored-card">
+            <div class="card-title"><h3>Update Information!</h3> <p>calories burned and step counts are calculated automatically</p></div>
             <div class="card-body">
               <form class="row g-3">
                   <div class="col-md-4">
@@ -143,7 +143,7 @@
 
                   </div>
                   <div class="col-12">
-                    <button type="button" class="btn btn-primary" onclick="UpdateFunc();">Update</button>
+                    <button type="button" class="btn colored-btn" onclick="UpdateFunc();">Update</button>
                   </div>
               </form>
             </div>
@@ -196,8 +196,8 @@
                   }
                 }
                 if(height1!=""&&weight1!=""){
-                  bmi1 = parseInt(height1,10)/parseInt(weight1,10);
-                  document.getElementById("bmiHere").innerHTML = "<h1>"+bmi1+"</h2>"
+                  bmi1 = parseInt(weight1,10)/((parseInt(height1,10)*parseInt(height1,10))/10000);
+                  document.getElementById("bmiHere").innerHTML = "<h1>"+bmi1.toFixed(1)+"</h2>"
                   if(bmi1 >24){
                     var appearence =  document.getElementById('bmiSpan');
                     appearence.className = "label label-warning mx-auto";

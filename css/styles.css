@@ -91,11 +91,15 @@ body {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
-.card-title {
-  /* color: #fff; */
-  /* font-size: 24px;
-  font-weight: 300; */
-  /* text-transform: uppercase; */
+.colored-card {
+  background-color: #57dbaf;
+  color: #fff;
+}
+
+.card-title p {
+  margin: 0%;
+  padding: 0%;
+  font-size: 1rem;
 }
 
 .label {
@@ -118,6 +122,17 @@ body {
 
 .dashboard-column {
   padding: 3% 2%;
+}
+
+.colored-btn {
+  background-color: #fff;
+  color: #04aa6d;
+  /* margin: 0.75% 0%; */
+}
+
+.colored-btn:hover {
+  background-color: #04aa6d;
+  color: #fff;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
