@@ -12,11 +12,16 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
-    crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+      crossorigin="anonymous"
+    />
 
     <link rel="stylesheet" href="css/styles.css" />
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/9e827375c0.js" crossorigin="anonymous"></script>
     <title>HealthZilla</title>
   </head>
   <body>
@@ -55,41 +60,59 @@
       </div>
     </nav>
     <div id="content">
-      <img src="Logo.jpg" class="ribbon"/>
+      <img src="Logo.jpg" class="ribbon" />
     </div>
-    <div class="main" style="background-color:white;">
+    <div class="main" style="background-color: white">
       <h1>My Health Overview</h1>
-      <div class="row row-cols-2">
-        <div class="col-md-6 col-sm-12">BMI</div>
-        <div class="col-md-6 col-sm-12">
-          <label for="weight">Weight</label>
-          <input
-            id="weight"
-            name="weight"
-            type="number"
-            step="0.1"
-            placeholder="lbs"
-          />
+      <div class="row">
+        <div class="col-lg-4 col-md-6 dashboard-column">
+          <div class="card">
+            <div class="card-title"><h3>BMI</h3><i class="fas fa-weight fa-3x icons"></i></div>
+            <div class="card-body"><h1>23.9</h2></div>
+              <span class="label label-success mx-auto">Normal</span>
+          </div>
         </div>
-        <div class="col-md-6">Heart Rate</div>
-        <div class="col-md-6">Calories</div>
-        <div class="col-md-6">Steps</div>
-        <div class="col-md-6">
-          <label for="exercise">Exercise</label>
-          <select id="exercise" name="exercise">
-            <option value="">activity</option>
-            <option>Weights</option>
-            <option>Running</option>
-            <option>Cardio</option>
-            <option>Yoga</option>
-          </select>
-
-          <input
-            id="exercisedetail"
-            name="exercisedetail"
-            type="text"
-            placeholder="minutes"
-          />
+        <div class="col-lg-4 col-md-6 dashboard-column">
+          <div class="card">
+            <div class="card-title"><h3>Steps</h3><i class="fas fa-shoe-prints fa-3x icons"></i></div>
+            <div class="card-body"><h1>3171</h2></div>
+              <span class="label label-success mx-auto">Normal</span>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 dashboard-column">
+          <div class="card">
+            <div class="card-title"><h3>Calories</h3><i class="fas fa-fire fa-3x icons"></i></div>
+            <div class="card-body"><h1>2120</h2></div>
+              <span class="label label-success mx-auto">Normal</span>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 dashboard-column">
+          <div class="card">
+            <div class="card-title"><h3>Heart Rate</h3><i class="fas fa-heartbeat fa-3x icons"></i></div>
+            <div class="card-body"><h1>98</h2></div>
+              <span class="label label-success mx-auto">Normal</span>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 dashboard-column">
+          <div class="card">
+            <div class="card-title"><h3>Sleep</h3><i class="fas fa-bed fa-3x icons"></i></div>
+            <div class="card-body"><h1>4 hrs</h2></div>
+              <span class="label label-warning mx-auto">Low</span>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 dashboard-column">
+          <div class="card">
+            <div class="card-title"><h3>Cycling</h3><i class="fas fa-biking fa-3x icons"></i></div>
+            <div class="card-body"><h1>2 hrs</h2></div>
+              <span class="label label-success mx-auto">Normal</span>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 dashboard-column">
+          <div class="card">
+            <div class="card-title"><h3>Lifting</h3><i class="fas fa-dumbbell fa-3x icons"></i></div>
+            <div class="card-body"><h1>1 hrs</h2></div>
+              <span class="label label-success mx-auto">Normal</span>
+          </div>
         </div>
       </div>
     </div>

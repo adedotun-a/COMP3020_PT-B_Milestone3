@@ -80,6 +80,41 @@ body {
   background-color: green;
 }
 
+.card {
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.card-title {
+  /* color: #fff; */
+  /* font-size: 24px;
+  font-weight: 300; */
+  /* text-transform: uppercase; */
+}
+
+.label {
+  font-size: 2rem;
+  margin-bottom: 7%;
+}
+
+.label-success {
+  background-color: #04aa6d;
+}
+
+.icons {
+  color: #04aa6d;
+  margin-top: 2rem;
+}
+
+/* .icons:hover {
+  color: #05dc8d;
+} */
+
+.dashboard-column {
+  padding: 3% 2%;
+}
+
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidenav {
